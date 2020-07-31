@@ -1,0 +1,23 @@
+{
+  "name": "TypeScriptStudy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RudolfStepanian/TypeScriptStudy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RudolfStepanian/TypeScriptStudy/issues"
+  },
+  "homepage": "https://github.com/RudolfStepanian/TypeScriptStudy#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
