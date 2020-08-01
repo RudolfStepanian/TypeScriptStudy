@@ -4,8 +4,8 @@ class Person {
         this.name = name;
     }
 }
-const btn = document.querySelector('#btn');
-btn.addEventListener('click', () => {
+const btn1 = document.querySelector('#btn');
+btn1.addEventListener('click', () => {
     console.log('btn clicked');
 });
 function logInfo(data) {

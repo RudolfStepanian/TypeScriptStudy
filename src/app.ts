@@ -2,8 +2,8 @@ class Person {
     constructor(private  name: string) {}
 }
 
-const btn: Element = document.querySelector('#btn')!;
-btn.addEventListener('click', ()=>{
+const btn1: Element = document.querySelector('#btn')!;
+btn1.addEventListener('click', ()=>{
     console.log('btn clicked')
 })
 
