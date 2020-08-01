@@ -5,7 +5,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var validate = WebAssembly.validate;
 function Component(config) {
     return function (Constructor) {
         return class extends Constructor {
@@ -53,18 +52,39 @@ CardComponent = __decorate([
 const card = new CardComponent('card');
 const btn = document.querySelector('#btn');
 btn.addEventListener('click', card.logName);
-function Oip(obj) {
-    console.log(obj);
+const validators = {};
+function Required(target, propName) {
+    validators[target.constructor.name] = Object.assign(Object.assign({}, validators[target.constructor.name]), { [propName]: 'required' });
 }
-function OipC(obj) {
-    console.log(obj);
-}
-let A = class A {
-    constructor(id) {
-        this.id = id;
+function Validate(obj) {
+    const objConfig = validators[obj.constructor.name];
+    if (!objConfig) {
+        return true;
     }
-};
-A = __decorate([
-    Oip
-], A);
+    let isValid = true;
+    Object.keys(objConfig).forEach(key => {
+        if (objConfig[key] === 'required') {
+            isValid = isValid && !!obj[key];
+        }
+    });
+    debugger;
+    return isValid;
+}
+class Formb {
+    constructor(email, name) {
+        this.email = email;
+        this.name = name;
+    }
+}
+__decorate([
+    Required
+], Formb.prototype, "name", void 0);
+const form = new Formb('1', '2');
+if (Validate(form)) {
+    console.log('validate: ', form);
+}
+else {
+    console.log('validation error');
+}
+console.log(form);
 //# sourceMappingURL=decorators.js.map
